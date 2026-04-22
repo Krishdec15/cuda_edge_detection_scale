@@ -6,8 +6,6 @@
 | :---: | :---: |
 | ![Original](data/sample.png) | ![Edge Details](data/sample_edges.png) |
 
-> *Note: `sample_edges.png` will render here after the code is executed in the Coursera Lab and pushed back to the repository.*
-
 This repository contains the final independent project for the **CUDA at Scale for the Enterprise** course.
 The application processes a large volume of visual data (either images or hundreds of frames in high-res video files) using NVIDIA Performance Primitives (NPP) applying an edge detection filter. It satisfies the requirement of operating on "100s of small pieces of data or 10s of large pieces of data" because the target video typically includes hundreds, if not thousands, of frames processed efficiently on a GPU.
 
