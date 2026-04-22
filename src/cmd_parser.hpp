@@ -4,22 +4,30 @@
 #include <string>
 #include <helper_string.h>
 
-class CmdArgParser {
+class CmdArgParser
+{
 public:
-    CmdArgParser(int argc, char** argv) {
-        char* in_path = nullptr;
-        if (checkCmdLineFlag(argc, (const char**)argv, "input")) {
-            getCmdLineArgumentString(argc, (const char**)argv, "input", &in_path);
+    CmdArgParser(int argc, char **argv)
+    {
+        char *in_path = nullptr;
+        if (checkCmdLineFlag(argc, (const char **)argv, "input"))
+        {
+            getCmdLineArgumentString(argc, (const char **)argv, "input", &in_path);
             input_file = in_path;
-        } else {
+        }
+        else
+        {
             input_file = "data/Lena.png";
         }
 
-        char* out_path = nullptr;
-        if (checkCmdLineFlag(argc, (const char**)argv, "output")) {
-            getCmdLineArgumentString(argc, (const char**)argv, "output", &out_path);
+        char *out_path = nullptr;
+        if (checkCmdLineFlag(argc, (const char **)argv, "output"))
+        {
+            getCmdLineArgumentString(argc, (const char **)argv, "output", &out_path);
             output_file = out_path;
-        } else {
+        }
+        else
+        {
             output_file = "data/Lena_edges.png";
         }
 
@@ -35,11 +43,14 @@ private:
     std::string output_file;
     std::string file_extension;
 
-    static std::string extractExtension(const std::string& path) {
+    static std::string extractExtension(const std::string &path)
+    {
         size_t pos = path.find_last_of('.');
-        if (pos != std::string::npos) {
+        if (pos != std::string::npos)
+        {
             std::string ext = path.substr(pos);
-            for (auto& c : ext) c = tolower(c);
+            for (auto &c : ext)
+                c = tolower(c);
             return ext;
         }
         return "";
